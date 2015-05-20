@@ -2,26 +2,23 @@
 def insertionSort(ar):  
 	V=ar[-1]
 	l=len(ar)
-	for x in xrange(1,l):
-		if ar[l-x-1]>V:
-			ar[l-x]=ar[l-x-1]
-			for i in ar:
-				print i,
-			print
-		elif ar[l-x-1]==V:
-			ar[l-x]=V
-			for i in ar:
-				print i,
-			print
-			break
+	flag=1
+	for x in xrange(l):
+		if x==l-1:
+			ar[l-x-1]=V
 		else:
-			ar[l-x]=V
-			for i in ar:
-				print i,
-			print
+			if ar[l-x-2]>V:
+				ar[l-x-1]=ar[l-x-2]	
+			elif ar[l-x-2]==V:
+				flag=0
+			else:
+				ar[l-x-1]=V
+				flag=0
+		for i in ar:
+			print i,
+		print
+		if not flag:
 			break
-
-		
 m = input()
 ar = [int(i) for i in raw_input().strip().split()]
 insertionSort(ar)
