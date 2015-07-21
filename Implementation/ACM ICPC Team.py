@@ -1,11 +1,20 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-def solution(person,n,t):
-	print person[1]|person[2]
+N,T = (int(i) for i in raw_input().split())
+people = [raw_input() for j in xrange(N)]
 
-if __name__ == '__main__':
-	N,T=raw_input().split()
-	n,t=int(N),int(T)
-	person=[]
-	for _ in xrange(n):
-		person.append(int(raw_input())
-	solution(person,n,t)
+max_topics = 0
+max_teams = 0
+
+for i,person1 in enumerate(people):
+	for j,person2 in enumerate(people[i+1:]):
+		binary1 = int(person1,2)
+		binary2 = int(person2,2)
+		topics = bin(binary1|binary2).count('1')
+
+		if topics > max_topics:
+			max_topics = topics
+			max_teams = 1
+		elif topics == max_topics:
+			max_teams += 1
+
+print max_topics
+print max_teams
