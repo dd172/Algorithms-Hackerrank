@@ -12,4 +12,3 @@ for _ in xrange(T):
 			print X*(B+W)+W*Z
 	else:
 		print B*X+W*Y
-	
