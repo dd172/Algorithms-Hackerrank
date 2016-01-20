@@ -1,5 +1,5 @@
 #divide and conquer
-
+'
 Alogrithms Result M(Problem prob)
 {
     if (<problem can be solved easily>)
@@ -13,3 +13,4 @@ Alogrithms Result M(Problem prob)
     Result finalResult = <combine all results of smaller problem to solve large problem>
     return finalResult;
 }
+'
